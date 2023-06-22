@@ -263,7 +263,7 @@ fi
 group 'Bind filesystems into chroot'
 
 mkdir -p proc
-sudo mount -v -t proc none proc
+# sudo mount -v -t proc none proc
 mount_bind /dev dev
 mount_bind /sys sys
 mount_bind "$RUNNER_HOME/work" "${RUNNER_HOME#/}/work"
