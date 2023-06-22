@@ -113,8 +113,8 @@ mount_bind() {
 	local dir=$2
 
 	mkdir -p "$dir"
-	mount -v --rbind "$src" "$dir"
-	mount --make-rprivate "$dir"
+	sudo mount -v --rbind "$src" "$dir"
+	sudo mount --make-rprivate "$dir"
 }
 
 
@@ -262,7 +262,7 @@ fi
 group 'Bind filesystems into chroot'
 
 mkdir -p proc
-mount -v -t proc none proc
+sudo mount -v -t proc none proc
 mount_bind /dev dev
 mount_bind /sys sys
 mount_bind "$RUNNER_HOME/work" "${RUNNER_HOME#/}/work"
