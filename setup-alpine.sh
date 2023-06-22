@@ -13,6 +13,7 @@
 # - INPUT_VOLUMES
 #
 set -euo pipefail
+set -vx
 
 readonly SCRIPT_PATH=$(readlink -f "$0")
 readonly SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
